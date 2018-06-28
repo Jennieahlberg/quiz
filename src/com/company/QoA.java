@@ -9,6 +9,7 @@ public class QoA {
 
     public QoA() {
         Scanner input = new Scanner(System.in);
+
         Random random = new Random();
         Map<String, String> capitals = new LinkedHashMap<>();
 
@@ -27,6 +28,7 @@ public class QoA {
         capitals.put("Grekland", "Aten");
         capitals.put("Lettland", "Riga");
 
+        int counter = 0;
         while (true) {
             int randomIndex = random.nextInt(capitals.size());
             String randomKey = getRandomKey(capitals, randomIndex);
@@ -36,20 +38,23 @@ public class QoA {
             String guess = input.nextLine();
 
             if (guess.equalsIgnoreCase(randomValue)) {
-                System.out.println("Rätt!");
+                counter++;
+                System.out.println("Rätt!\nAntal rätt: " + counter);
                 System.out.println();
             } else
-                System.out.println("Fel, rätt svar är " + randomValue + ".\n");
+                System.out.println("Fel, rätt svar är " + randomValue + ".\nAntal rätt: " + counter + '\n');
         }
 
     }
 
     public static String getRandomValue(Map<String, String> map, int index) {
-        return GetInfo.getAValueFromIndex(map, index);
+        GetInfo getInfo = new GetInfo();
+        return getInfo.getAValueFromIndex(map, index);
     }
 
     public static String getRandomKey(Map<String, String> map, int index) {
-        return GetInfo.getAKeyFromIndex(map, index);
+        GetInfo getInfo = new GetInfo();
+        return getInfo.getAKeyFromIndex(map, index);
     }
 
 }
