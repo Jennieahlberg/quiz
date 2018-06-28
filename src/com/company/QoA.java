@@ -47,12 +47,12 @@ public class QoA {
 
     }
 
-    public static String getRandomValue(Map<String, String> map, int index) {
+    public String getRandomValue(Map<String, String> map, int index) {
         GetInfo getInfo = new GetInfo();
         return getInfo.getAValueFromIndex(map, index);
     }
 
-    public static String getRandomKey(Map<String, String> map, int index) {
+    public String getRandomKey(Map<String, String> map, int index) {
         GetInfo getInfo = new GetInfo();
         return getInfo.getAKeyFromIndex(map, index);
     }
