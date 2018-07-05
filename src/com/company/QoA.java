@@ -44,7 +44,6 @@ public class QoA {
             } else
                 System.out.println("Fel, rätt svar är " + randomValue + ".\nAntal rätt: " + counter + '\n');
         }
-
     }
 
     public String getRandomValue(Map<String, String> map, int index) {
